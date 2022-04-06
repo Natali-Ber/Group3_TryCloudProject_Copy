@@ -30,8 +30,9 @@ ContactModule_Page contactModule_Page = new ContactModule_Page();
     }
     @Then("verify the contact names are in the list")
     public void verify_the_contact_names_are_in_the_list(List<String> expectedContacts) {
+        List<String>  actualContacts = BrowserUtils.getElementsText(contactModule_Page.modules);
 
-        Assert.assertEquals("TEXT NOT SAME",expectedContacts,BrowserUtils.getElementsText(contactModule_Page.modules));
+        Assert.assertEquals("TEXT NOT SAME",expectedContacts,actualContacts);
 
     }
 
